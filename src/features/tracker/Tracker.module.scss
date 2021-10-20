@@ -1,0 +1,41 @@
+.Container {
+  position: relative;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AddButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  background: none;
+  font-size: 28px;
+  line-height: 32px;
+  width: 32px;
+  height: 32px;
+  margin: 8px 16px;
+  outline: none;
+  border: 2px solid transparent;
+  color: #ff004a;
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: rgba(#ff004a, 0.2);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: all 0.15s;
+
+  &:hover,
+  &:focus {
+    border: 2px solid rgba(#ff004a, 0.5);
+    transform: scale(1.2);
+  }
+
+  &:active {
+    background-color: rgba(#ff004a, 0.4);
+  }
+}

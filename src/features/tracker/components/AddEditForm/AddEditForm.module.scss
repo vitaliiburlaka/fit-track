@@ -1,0 +1,112 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(#000, 0.25);
+  z-index: 100;
+}
+
+.Form {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+
+  input:not([type='submit']),
+  input:not([type='checkbox']),
+  input:not([type='radio']) {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.FormGroup {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  > label {
+    margin-bottom: 8px;
+  }
+}
+
+.FormTitle {
+  composes: FormGroup;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.Button {
+  background-color: #f5f5f5;
+  border: 0;
+  border-radius: 3px;
+  padding: 8px 16px;
+  transition: all 0.15s;
+
+  &:hover {
+    background-color: darken(#f5f5f5, 5%);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &[type='submit'] {
+    background-color: #00a8ff;
+    color: #fff;
+    font-weight: bold;
+
+    &:hover {
+      background-color: darken(#00a8ff, 5%);
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.asyncButton {
+  composes: Button;
+  position: relative;
+
+  &:after {
+    content: '';
+    background-color: rgba(#00a8ff, 0.15);
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: width 1s linear, opacity 0.5s ease 1s;
+  }
+
+  &:active:after {
+    width: 0%;
+    opacity: 1;
+    transition: 0s;
+  }
+}

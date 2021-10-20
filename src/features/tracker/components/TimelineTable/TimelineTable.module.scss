@@ -1,0 +1,39 @@
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  thead {
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+
+  td {
+    padding: 8px 16px;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+}
+
+.Button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
